@@ -6,19 +6,18 @@ import "hardhat/console.sol";
 
 contract RockPaperScissors {
 
-    uint public rock = 1;
-    uint public paper = 2;
-    uint public scissors = 3;
+    uint constant ROCK = 1;
+    uint constant PAPER = 2;
+    uint constant SCISSORS = 3;
     uint public fomoEndTime;
+    uint public fomoBalance;
 
     uint[] public priceToPlay;
     
     address private owner;
-    uint public fomoBalance;
     address public lastUpdateFomo;
 
     mapping(uint => bool) public checkPrice;
-    
     mapping(uint => address[2]) public playersPerPrice;
     mapping(address => uint) public stakeAmountPerUser;
     mapping(uint => mapping(uint8 => uint8)) public choicePerPlayer;
